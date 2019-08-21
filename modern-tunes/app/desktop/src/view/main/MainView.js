@@ -1,26 +1,19 @@
 Ext.define('ModernTunes.view.main.MainView', {
-  extend: 'Ext.Container',
+  extend: 'Ext.tab.Panel',
   xtype: 'mainview',
   controller: 'mainviewcontroller',
   viewModel: {
     type: 'mainviewmodel'
   },
+  tabBarPosition: 'bottom',
   items: [
     {
-      xtype: 'component',
-      html: '<a style="font-size:24px" target="_blank" href="https://docs-devel.sencha.com/extjs/6.7.0-CE/guides/quick_start/What_You_Will_Be_Coding.html">Quick Start Tutorial Here</a><p>'
+      title: 'Thumbnails',
+      html: '<h1>tunes view</h1>'
     },
     {
-      xtype: 'displayfield',
-      reference: 'df',
-      bind: {
-        value: '{clickTime}'
-      }
-    },
-    {
-      xtype: 'button',
-      text: 'Click Me!',
-      handler: 'onButtonClick'
+      title: 'Grid',
+      html: '<h1>tunes grid</h1>'
     }
   ]
 })
