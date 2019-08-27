@@ -2,6 +2,11 @@ Ext.define('ModernTunes.view.main.MainView', {
   extend: 'Ext.tab.Panel',
   xtype: 'mainview',
   controller: 'mainviewcontroller',
+  requires: [
+    'ModernTunes.view.tunes.TunesView',
+    'ModernTunes.view.main.MainViewController',
+    'ModernTunes.view.main.MainViewModel'
+  ],
   viewModel: {
     type: 'mainviewmodel'
   },
@@ -9,7 +14,8 @@ Ext.define('ModernTunes.view.main.MainView', {
   items: [
     {
       title: 'Thumbnails',
-      html: '<h1>tunes view</h1>'
+      xtype: 'tunesview',
+      bind: { store: '{tunes}' }
     },
     {
       title: 'Grid',
