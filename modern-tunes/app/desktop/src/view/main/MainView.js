@@ -15,11 +15,17 @@ Ext.define('ModernTunes.view.main.MainView', {
     {
       title: 'Thumbnails',
       xtype: 'tunesview',
+      listeners: {
+        select: 'onThumbSelect'
+      },
       bind: { store: '{tunes}' }
     },
     {
       title: 'Grid',
       xtype: 'tunesgrid',
+      listeners: {
+        select: 'onGridSelect'
+      },
       bind: { store: '{tunes}' }
     }
   ]
